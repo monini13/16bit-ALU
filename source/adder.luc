@@ -1,0 +1,40 @@
+module adder (
+    input alufn[6],
+    input a[16],  
+    input b[16],    
+
+    output sum1[16],
+    output z,
+    output v, 
+    output n,
+    output addiover
+  ) {
+sig sum[17]; //addition
+sig subsum[17]; //subtraction
+
+  always {
+    case(alufn[1:0]){
+      b00:
+        sum =a+b;
+        subsum = a-b;
+      b01:
+        sum =a-b;
+        subsum = a-b;
+      b10:
+        sum =a*b;
+        subsum = a-b;
+      b11:
+        sum =a-((a/b)*b);
+        subsum = a-b;
+      default:
+        sum = a+b;
+        subsum = a-b;
+    }
+      sum1 = sum[15:0];
+      v = (a[15] & ~b[15] & ~subsum[15]) | (~a[15] & b[15] & subsum[15]);
+      n = subsum[15];
+      addiover = (a[15] & b[15] & ~sum[15]) | (~a[15] & ~b[15] & sum[15]);
+      z = ~|subsum;
+    
+  }
+}

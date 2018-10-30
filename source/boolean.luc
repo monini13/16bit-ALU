@@ -1,0 +1,17 @@
+module boolean (
+    input a[16],
+    input b[16],
+    input alufn[6],
+    output out[16]
+  ) {
+
+  always {
+    case (alufn) {
+      6b011000: out = a & b;  //AND 
+      6b011110: out = a | b;  //OR 
+      6b010110: out = a ^ b;  //XOR 
+      6b011010: out = a;      //"A"
+      default: out = 0;
+    }
+  }
+}
