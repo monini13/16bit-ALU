@@ -1,0 +1,8 @@
+INTSTYLE=pa
+INFILE=E:\Documents\mojo\alu16copy\work\planAhead\alu16\alu16.runs\impl_1\mojo_top_0_routed.ncd
+OUTFILE=E:\Documents\mojo\alu16copy\work\planAhead\alu16\alu16.runs\impl_1\mojo_top_0.bit
+FAMILY=Spartan6
+PART=xc6slx9-2tqg144
+WORKINGDIR=E:\Documents\mojo\alu16copy\work\planAhead\alu16\alu16.runs\impl_1
+LICENSE=WebPack
+USER_INFO=211605429_0_0_551
